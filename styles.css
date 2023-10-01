@@ -1,26 +1,72 @@
-body {
+@font-face {
+    font-family: "bungeeshade-regular";
+    src: url(fonts/BungeeShade-Regular.ttf);
+
+}
+
+@font-face {
+    font-family: "bungeeoutline-regular";
+    src: url(fonts/BungeeOutline-Regular.ttf);
+}
+
+@font-face {
+    font-family: "barlow-condesed";
+    src: url("fonts/BarlowCondensed-Black.ttf");
+}
+
+@font-face {
+    font-family: "barlow-semi-condesed";
+    src: url(fonts/BarlowSemiCondensed-Black.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
     margin: 0px;
+}
+
+
+body {
     background-image: url(image/417001a39fe6f926bc770a0e58859064.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
-    max-width: 1200px;
+
+
+    display: flex;
+    justify-content: center;
+
+
 }
 
+/*största containern*/
 .main-wrap {
     background-color: rgba(192, 192, 192, 0.3);
     padding: 20px;
-    border-radius: 10px;
-    margin: 5rem 7rem 7rem;
-    height: 60rem;
-
+    border-radius: 1rem;
+    margin: 50px;
+    height: 100%;
+    min-width: 800px;
 }
 
-.container {
+h1 {
+    font-family: "bungeeshade-regular";
+    font-size: 40px;
+    margin: 0px 10px;
+}
+
+h2 {
+    font-family: "bungeeoutline-regular";
+    font-size: 25px;
+}
+
+
+
+/*navigation-baren och menyerna*/
+#nav-container {
     display: flex;
     gap: 10px;
     margin: 0 10px;
-
 }
 
 nav a {
@@ -29,28 +75,72 @@ nav a {
     flex-grow: 1;
     flex-basis: 0;
 
+
     text-decoration: none;
     color: white;
     text-align: center;
     font-size: 15px;
 
-    border-radius: 10px;
-
+    border-radius: 1rem;
 }
 
 nav a:hover {
     background-color: rgb(255, 0, 0, 0.2);
 }
 
-nav #nohover {
+nav a:nth-child(2) {
     pointer-events: none;
+    border: 2px solid white;
 }
 
-main {
+/*huvud-containern med allt huvudinnehåll*/
+.grid-container {
     background-color: rgba(215, 53, 177, 0.2);
-    height: 50rem;
-    border-radius: 10px;
-    margin: 40px 20px;
+    border-radius: 1rem;
+    margin: 40px 10px;
+    height: 47rem;
+    padding: 0 10px;
+
+    display: grid;
+    grid-template-columns: 400px 50px 1fr;
+    grid-template-rows: 50px 60px 300px;
+
+}
+
+.grid-container div {
+    grid-row: 3;
+}
+
+main .grid-container p:nth-child(2) {
+    padding: 0 30px;
+}
 
 
+main h3 {
+    font-size: 25px;
+    grid-column: 1;
+    width: 300px;
+}
+
+/*front and back img:s with hover*/
+.hover-animation {
+    position: relative;
+
+}
+
+.hover-animation img {
+    position: absolute;
+    height: 370px;
+    width: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    bottom: 20px;
+    left: 13px;
+
+}
+
+
+
+.hover-animation img.front-img:hover {
+    display: none;
 }
