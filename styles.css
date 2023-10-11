@@ -10,13 +10,18 @@
 }
 
 @font-face {
-    font-family: "barlow-condesed";
-    src: url("fonts/BarlowCondensed-Black.ttf");
+    font-family: "barlow-condesed-regular";
+    src: url("fonts/BarlowCondensed-Regular.ttf");
 }
 
 @font-face {
-    font-family: "barlow-semi-condesed";
-    src: url(fonts/BarlowSemiCondensed-Black.ttf);
+    font-family: "barlow-semi-condesed-regular";
+    src: url(fonts/BarlowSemiCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: "barlow-semi-condesed-bold";
+    src: url(fonts/BarlowSemiCondensed-Bold.ttf);
 }
 
 * {
