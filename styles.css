@@ -27,7 +27,6 @@
 * {
     box-sizing: border-box;
     padding: 0px;
-    margin: 0px;
 }
 
 
@@ -35,69 +34,89 @@ body {
     background-image: url(image/417001a39fe6f926bc770a0e58859064.jpg);
     background-position: center;
     background-size: cover;
-    height: 100%;
-
-
-
-    display: flex;
-    justify-content: center;
 
 
 }
 
-/*största containern*/
-.main-wrap {
+
+/*------------------största containern-------------------------------*/
+article {
     background-color: rgba(192, 192, 192, 0.3);
-    padding: 20px;
-    border-radius: 1rem;
-    margin: 150px;
-    height: 100%;
-    max-width: 1200px;
-
-
+    padding: 1.5vw;
+    border-radius: 10px solid white;
+    margin: 10%;
 }
+
 
 /*rubriker och texter*/
-.main-wrap h1 {
+article h1 {
     font-family: "bungeeshade-regular";
-    font-size: 40px;
-    margin: 0px 10px;
+    font-size: 4vw;
+    margin: 1.5vw;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
 }
 
 main h2 {
     font-family: "bungeeoutline-regular";
-    font-size: 30px;
+    font-size: 2.2vw;
 }
 
-main h3 {
-    font-size: 22px;
-    margin: -20px 0px 30px;
+main>div h3 {
+    font-size: 1.8vw;
+    margin-top: -4.5vw;
+    margin-bottom: 2vw;
 
 }
+
+.flex-container h2 {
+    position: relative;
+    top: -20px;
+}
+
+
 
 main p {
-    font-size: 14px;
+    font-family: "barlow-condesed-regular";
+    font-size: 1vw;
+
 }
 
-main #indentation {
-    margin-left: 40px
+#indentation {
+    margin-left: 30px;
+    margin-top: -10px;
+}
+
+
+main .box-row1 div p,
+main #box-row2 div p {
+    font-family: "barlow-semi-condesed-regular";
+    color: beige;
+    font-size: 0.9vw;
+    padding: 1vw;
 }
 
 
 
 
 
-/*navigation-baren och menyerna*/
-#nav-container {
+
+
+
+/*------------------navigation-baren och menyerna------------*/
+nav {
     display: flex;
-    gap: 10px;
-    margin: 0 10px;
-    margin-bottom: 65px;
+    gap: 1.5vh;
+    margin: 1vw 1vw;
+    margin-bottom: 3vw;
 }
 
 nav a {
     background-color: grey;
-    padding: 17px;
+    padding: 1vw;
     flex-grow: 1;
     flex-basis: 0;
 
@@ -105,13 +124,13 @@ nav a {
     text-decoration: none;
     color: white;
     text-align: center;
-    font-size: 15px;
+    font-size: 1.5vw;
 
-    border-radius: 1rem;
+    border-radius: 10px;
 }
 
 nav a:hover {
-    background-color: rgb(255, 0, 0, 0.2);
+    background-color: rgb(146, 63, 80);
 }
 
 nav a:nth-child(2) {
@@ -119,140 +138,290 @@ nav a:nth-child(2) {
     border: 2px solid white;
 }
 
-/*huvud-containern med allt huvudinnehåll*/
+/*-------huvud-containern med allt huvudinnehåll----------*/
 
-main .small-wrap {
-    background-color: rgba(215, 53, 177, 0.2);
-    height: 45rem;
-    max-width: 1200px;
-    padding: 0 10px;
+main>div {
+    background-color: rgba(23, 10, 18, 0.2);
+    height: auto;
+    padding: 10px;
     border-radius: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 3vw;
+    border: 1px solid white;
+
 }
+
+.flex-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+
 
 .grid-container {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-template-rows: 400px;
-    gap: 3px;
-
-
+    grid-template-columns: repeat(1, 30vw);
+    grid-template-rows: 30vw auto;
+    row-gap: 5px;
 
 }
 
 
 
-/*front and back img:s with hover*/
+/*-------------front and back img:s with hover----------------*/
 .hover-animation {
     position: relative;
-    grid-column: 2;
-    margin: 10px;
+    grid-column: 1/span2;
+    grid-row: 1;
+
 
 }
+
 
 .hover-animation img {
-    position: absolute;
+    width: 100%;
     height: 100%;
-    width: 104%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    right: -9px;
 }
 
 
-.hover-animation img.front-img:hover {
-    display: none;
+.hover-animation img:nth-child(2) {
+    position: absolute;
+    opacity: 0;
+    transition-duration: 500ms;
+
+
+}
+
+.hover-animation img:nth-child(1) {
+    position: absolute;
+}
+
+.hover-animation:hover img:nth-child(2) {
+    opacity: 1;
 }
 
 
-/*Boxar med innehåll*/
-section {
+/*------------------skapar varje box ----------*/
+
+.small-gridd-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 10px;
-    position: relative;
-
-
-}
-
-/*skapar varje box*/
-section div {
-    background-color: rgb(214, 115, 134);
-    height: 9.5rem;
-    width: 11rem;
-    border-radius: 2px;
-    padding: 15px 0px;
-
-    margin-bottom: 8px;
-
-}
-
-
-
-main section div:nth-child(1) {
-    grid-column: 7;
-    grid-row: 1;
-    border-radius: 0px 0px 20px 0px;
-}
-
-
-main section div:nth-child(2) {
-    grid-column: 6;
-    grid-row: 1;
-    border-radius: 0px 0px 0px 20px;
-}
-
-
-/*lista i boxerna*/
-section p {
-    position: relative;
-    left: 13px;
-}
-
-section ol li {
-    font-size: 12px;
-    position: relative;
-    left: 25px;
-}
-
-
-
-
-main .second-section {
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: repeat(1, 14.6vw);
+    grid-template-rows: 13vw;
     gap: 5px;
 }
 
 
+main .small-gridd-container div:nth-child(1),
+main .small-gridd-container div:nth-child(2),
+main .box-row1 div,
+main #box-row2 div {
+    background-color: rgb(146, 63, 80);
+    border-radius: 2px;
+    color: white;
+    font-size: 2vw;
+}
 
-main .second-section div:nth-child(1) {
+
+/* ----------- box under skivomslaget ---------- */
+
+main .small-gridd-container div:nth-child(1) {
+    border-radius: 0px 0px 0px 20px;
+}
+
+
+main .small-gridd-container div:nth-child(2) {
+    grid-column: 2;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.grid-container>div ol p,
+#box-row2>div ol p {
+    font-family: "barlow-semi-condesed-bold";
+    font-size: 1vw;
+    position: relative;
+    left: 1vw;
+    bottom: -2.5vw;
+    padding: 1vw;
+}
+
+
+main .grid-container ol li {
+    font-size: 0.9vw;
+    position: relative;
+    left: 2.8vw;
+    top: 9px;
+}
+
+.grid-container>div ol,
+#box-row2>div ol {
+    position: relative;
+    top: -3.9vw;
+}
+
+/*---------------boxarna längst ner-------------------*/
+main .box-row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+
+
+}
+
+main .box-row1 div,
+main #box-row2 div {
+    background-color: rgb(77, 84, 143);
+    padding: 15px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+
+main .box-row1 div:nth-child(1) {
     grid-column: 1;
+    grid-row: 2;
     border-radius: 20px 0px 20px 20px;
 
-
-
 }
 
-main .second-section div:nth-child(2) {
+main .box-row1 div:nth-child(2) {
     grid-column: 3;
+    grid-row: 2;
     width: 100%;
     border-radius: 20px 20px 20px 0px;
-
+    max-width: 100%;
 
 }
 
-main .second-section div:nth-child(3) {
+main .box-row1 div:nth-child(3) {
+    background-image: url("image/90-vibe.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: none;
     grid-column: 4;
+    grid-row: 2;
     border-radius: 0px 20px 20px 20px;
 
+}
+
+
+main .box-row1 div:nth-child(4) {
+    grid-column: 5;
+    grid-row: 2;
+    border-radius: 20px 20px 0px 20px;
 
 }
 
 
-main .second-section div:nth-child(4) {
-    grid-column: 5;
+/*--------------------sida 2-----------------------------*/
+
+#box-row2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+    gap: 5px;
+}
+
+
+main #box-row2 div:nth-child(1) {
+    border-radius: 20px 20px 20px 0px;
+    width: 100%;
+
+
+}
+
+main #box-row2 div:nth-child(2) {
+    width: 100%;
+    border-radius: 0px 10px 0px 20px;
+}
+
+main #box-row2 div:nth-child(3) {
+    background-image: url("image/concert.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    border-radius: 0px 20px 20px 20px;
+    width: 100%;
+}
+
+
+
+main #box-row2 div:nth-child(4) {
+    width: 100%;
+    border-radius: 20px 20px 0px 20px;
+
+}
+
+
+
+/*-------------------------------------media queries--------------------------------------------*/
+
+@media (min-width: 800px) and (max-width: 900px) {
+    body {}
+}
+
+@media (max-width: 500px) {
+    body {
+        background-image: url("image/background-phone.jpg");
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    header h1 {
+        font-family: "bungeeshade-regular";
+        font-size: 11vw;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header h1:last-child {
+        position: relative;
+        top: -90px;
+    }
+
+    article {
+        background-color: transparent;
+        margin: 1.5vw;
+    }
+
+
+    nav {
+        gap: 1vw;
+        margin: 1vw 1vw;
+        margin-bottom: 15%;
+    }
+
+    nav a {
+        padding: 4.3vw;
+        font-size: 2.5vw;
+        border-radius: 10px;
+    }
+
+
+
+
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .grid-container {
+
+
+        justify-content: center;
+    }
+
+    .hover-animation img {
+        width: auto;
+    }
+
 
 }
